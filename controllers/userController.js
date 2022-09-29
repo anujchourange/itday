@@ -18,7 +18,9 @@ exports.register = async (req, res, next) => {
 
     const user = await User.create({ name, email, password });
 
-    const token = await signToken(user._id);
+    console.log(user.id);
+
+    const token = await signToken(user.id);
 
     if (user) {
       res.status(201).json({
@@ -51,6 +53,8 @@ exports.login = async (req, res, next) => {
 
     if (!isMatch)
       throw createHttpError.Unauthorized("email or password is not valid");
+
+    console.log(user.id);
 
     const token = await signToken(user.id);
 

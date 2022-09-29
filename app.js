@@ -13,8 +13,10 @@ app.use(express.json());
 
 // import routes
 const user = require("./routes/userRoutes");
+const client = require("./routes/clientRoutes");
 
 app.use("/api/v1", user);
+app.use("/api/v1", client);
 app.use(async (req, res, next) => {
   next(createHttpError.NotFound("This route does not exist"));
 });

@@ -2,17 +2,59 @@ POST http://localhost:8000/api/v1/register
 Content-Type: application/json
 
 {
-    "name":"Anuj C",
-    "email":"anuj@testgmail.dev",    
+    "name":"ash C",
+    "email":"ash4@testgmail.dev",    
     "password":"verysecret"
 }
 
-
-#login
+################################
+######### login ################
 POST http://localhost:8000/api/v1/login
 Content-Type: application/json
 
 {
     "email":"anuj@testgmail.dev",    
     "password":"verysecret"
+}
+
+################################
+######### add client ################
+POST http://localhost:8000/api/v1/clients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjQ0NzA3NzUsImV4cCI6MTY2NzA2Mjc3NSwiYXVkIjoiNjMzNWNlZjdiOWZlOTg5MGI4Njk0OWZlIiwiaXNzIjoiYW51ai5jb20ifQ._RKdP2awiKAx8g0rwfZd_85WUtn3c08AjKrqeWX7fnc
+
+{
+    "name":"Mahi D",
+    "email":"maaahi@testgmail.dev",    
+    "retainer_fee":"200"
+}
+
+################################
+######### get all clients ################
+GET http://localhost:8000/api/v1/clients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjQ0NzgzNDEsImV4cCI6MTY2NzA3MDM0MSwiYXVkIjoiNjMzNWJmMWQ2ZWU3NTlmMWFmZWUxOWZmIiwiaXNzIjoiYW51ai5jb20ifQ.XTkJFxZlEe0tgdrjUYOEPaKSiZxyDHljgCqd4TGWWc0
+
+################################
+######### get all clients  fail ################
+GET http://localhost:8000/api/v1/clients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjQ0NzQwNTYsImV4cCI6MTY2NzA2NjA1NiwiYXVkIjoiNjMzNWRiYzg2MmQ5OWE4MzU5YTNhY2EwIiwiaXNzIjoiYW51ai5jb20ifQ.FDt07tSpaZr-aOksBfS06_LeTdC6HyZ4NEjMjym9Q3k
+
+################################
+######### get client by id ################
+GET http://localhost:8000/api/v1/clients/6335ccf1059eef0e0596b1f8
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjQ0Nzg2MDIsImV4cCI6MTY2NzA3MDYwMiwiYXVkIjoiNjMzNWJmMWQ2ZWU3NTlmMWFmZWUxOWZmIiwiaXNzIjoiYW51ai5jb20ifQ.EyYtyhmwbbYFaC52ZB04TbE5UAMqoLNfNfHW49Qhndc
+
+################################
+######### update client by id ################
+PUT http://localhost:8000/api/v1/clients/6335ccf1059eef0e0596b1f8
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjQ0Nzg2MDIsImV4cCI6MTY2NzA3MDYwMiwiYXVkIjoiNjMzNWJmMWQ2ZWU3NTlmMWFmZWUxOWZmIiwiaXNzIjoiYW51ai5jb20ifQ.EyYtyhmwbbYFaC52ZB04TbE5UAMqoLNfNfHW49Qhndc
+
+{
+    "name":"Updated name here",
+    "email":"anuj@newemail.com",
+    "retainer_fee":"14214Asf23"
 }
