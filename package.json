@@ -1,0 +1,29 @@
+{
+  "name": "itday",
+  "version": "1.0.0",
+  "description": "itday nodejs assignment",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server.js"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "express",
+    "restapi",
+    "api",
+    "crud",
+    "jwt"
+  ],
+  "author": "Anuj Chourange",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "http-errors": "^2.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.6.2"
+  }
+}
