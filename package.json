@@ -4,7 +4,8 @@
   "description": "itday nodejs assignment",
   "main": "server.js",
   "scripts": {
-    "test": "nodemon server.js"
+    "test": "",
+    "dev" : "nodemon app.js"
   },
   "keywords": [
     "node",

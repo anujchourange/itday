@@ -1,0 +1,18 @@
+POST http://localhost:8000/api/v1/register
+Content-Type: application/json
+
+{
+    "name":"Anuj C",
+    "email":"anuj@testgmail.dev",    
+    "password":"verysecret"
+}
+
+
+#login
+POST http://localhost:8000/api/v1/login
+Content-Type: application/json
+
+{
+    "email":"anuj@testgmail.dev",    
+    "password":"verysecret"
+}
