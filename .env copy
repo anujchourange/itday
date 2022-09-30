@@ -1,0 +1,5 @@
+PORT = 8000
+DB_NAME = ur_db_name
+MONGO_URI = mongodb://localhost:27017
+NODE_ENV = development
+JWT_SECRET = 2244f7539a69093fb28c6df923a4ff1c1b2f463744b
