@@ -9,12 +9,9 @@ const Client = require("../models/clientModel");
 exports.addClient = async (req, res, next) => {
   try {
     const { name, email, retainer_fee } = req.body;
-    if (!name || !email || !retainer_fee || isNaN(retainer_fee))
-      throw createHttpError.BadRequest(`Invalid data`);
-
     // Check if client already exists
     // email should be unique per user
-    const doesExist = await Client.find({ email, user: req.userId });
+    const doesExist = await Client.find({ email, user: req.userId }); // returns array so we should check if its null
     if (doesExist.length)
       throw createHttpError.Conflict(`email of the client is already in use`);
 
@@ -27,7 +24,7 @@ exports.addClient = async (req, res, next) => {
     });
 
     if (client) {
-      client.__v = undefined;
+      client.__v = undefined; // removing unnecessary properties from response
       res.status(201).json(client);
     } else {
       res.status(400);
@@ -46,11 +43,6 @@ exports.addClient = async (req, res, next) => {
 exports.getClients = async (req, res, next) => {
   try {
     if (!req.userId) throw createHttpError.Unauthorized();
-
-    const { name, email, retainer_fee } = req.body;
-
-    if (!name || !email || !retainer_fee || isNaN(retainer_fee))
-      throw createHttpError.BadRequest(`Invalid data`);
 
     const clients = await Client.find({ user: req.userId }).select("-__v");
 
@@ -103,11 +95,6 @@ exports.getClient = async (req, res, next) => {
 exports.updateClient = async (req, res, next) => {
   try {
     if (!req.params.id) throw createHttpError.BadRequest("Invalid data");
-
-    const { name, email, retainer_fee } = req.body;
-
-    if (retainer_fee && isNaN(retainer_fee))
-      throw createHttpError.BadRequest(`Invalid retainer_fee value`);
 
     let client = await Client.findById(req.params.id).select("-__v");
 

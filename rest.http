@@ -2,9 +2,9 @@ POST http://localhost:8000/api/v1/register
 Content-Type: application/json
 
 {
-    "name":"ash C",
-    "email":"ash4@testgmail.dev",    
-    "password":"verysecret"
+    "name":"afasf",
+    "email":"ash4testgmail.dev",    
+    "password":"verys"
 }
 
 ################################
@@ -24,8 +24,8 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjQ0NzA3NzUsImV4cCI6MTY2NzA2Mjc3NSwiYXVkIjoiNjMzNWNlZjdiOWZlOTg5MGI4Njk0OWZlIiwiaXNzIjoiYW51ai5jb20ifQ._RKdP2awiKAx8g0rwfZd_85WUtn3c08AjKrqeWX7fnc
 
 {
-    "name":"Mahi D",
-    "email":"maaahi@testgmail.dev",    
+    "name":"latest client",
+    "email":"maaahiwaaaay@testgmail.dev",    
     "retainer_fee":"200"
 }
 
@@ -48,6 +48,12 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjQ0Nzg2MDIsImV4cCI6MTY2NzA3MDYwMiwiYXVkIjoiNjMzNWJmMWQ2ZWU3NTlmMWFmZWUxOWZmIiwiaXNzIjoiYW51ai5jb20ifQ.EyYtyhmwbbYFaC52ZB04TbE5UAMqoLNfNfHW49Qhndc
 
 ################################
+######### delete client by id ################
+DELETE http://localhost:8000/api/v1/clients/6335ccf1059eef0e0596b1f8
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjQ0Nzg2MDIsImV4cCI6MTY2NzA3MDYwMiwiYXVkIjoiNjMzNWJmMWQ2ZWU3NTlmMWFmZWUxOWZmIiwiaXNzIjoiYW51ai5jb20ifQ.EyYtyhmwbbYFaC52ZB04TbE5UAMqoLNfNfHW49Qhndc
+
+################################
 ######### update client by id ################
 PUT http://localhost:8000/api/v1/clients/6335ccf1059eef0e0596b1f8
 Content-Type: application/json
@@ -55,6 +61,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjQ0Nzg2M
 
 {
     "name":"Updated name here",
-    "email":"anuj@newemail.com",
-    "retainer_fee":"14214Asf23"
+    "email":"dhiraj@newemail.com",
+    "retainer_fee":"142123"
 }
