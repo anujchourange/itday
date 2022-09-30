@@ -1,4 +1,3 @@
-const bcrypt = require("bcrypt");
 const JWT = require("jsonwebtoken");
 const createHttpError = require("http-errors");
 
@@ -18,7 +17,7 @@ exports.register = async (req, res, next) => {
 
     const user = await User.create({ name, email, password });
 
-    console.log(user.id);
+    //console.log(user.id);
 
     const token = await signToken(user.id);
 
@@ -54,7 +53,7 @@ exports.login = async (req, res, next) => {
     if (!isMatch)
       throw createHttpError.Unauthorized("email or password is not valid");
 
-    console.log(user.id);
+    //console.log(user.id);
 
     const token = await signToken(user.id);
 
@@ -84,7 +83,7 @@ const signToken = (userId) => {
         console.error(err.message);
         return reject(createHttpError.InternalServerError());
       }
-      resolve(token);
+      return resolve(token);
     });
   });
 };
