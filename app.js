@@ -4,7 +4,7 @@ require("dotenv").config();
 const connectDB = require("./config/connectDB");
 const errorMiddleware = require("./middlewares/errorMiddleware");
 
-connectDB();
+connectDB(); // connect to mongodb
 
 const app = express();
 

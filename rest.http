@@ -2,9 +2,9 @@ POST http://localhost:8000/api/v1/register
 Content-Type: application/json
 
 {
-    "name":"afasf",
-    "email":"ash4testgmail.dev",    
-    "password":"verys"
+    "name":"Brad Pitt",
+    "email":"bradgmail@fakemail.dev",    
+    "password":"verysecrete"
 }
 
 ################################

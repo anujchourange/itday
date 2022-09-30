@@ -1,4 +1,5 @@
 const express = require("express");
+const router = express.Router();
 const {
   addClient,
   getClients,
@@ -7,8 +8,7 @@ const {
   deleteClient,
 } = require("../controllers/clientController");
 const verifyToken = require("../middlewares/authMiddleware");
-const router = express.Router();
-
+const isJson = require("../middlewares/isJsonMiddleware");
 // import  validateClient data
 const {
   validateAddClient,
@@ -17,13 +17,13 @@ const {
 
 router
   .route("/clients")
-  .post(verifyToken, validateAddClient, addClient)
+  .post(isJson, verifyToken, validateAddClient, addClient)
   .get(verifyToken, getClients);
 
 router
   .route("/clients/:id")
   .get(verifyToken, getClient)
-  .put(verifyToken, validateUpdateClient, updateClient)
+  .put(isJson, verifyToken, validateUpdateClient, updateClient)
   .delete(verifyToken, deleteClient);
 
 module.exports = router;
